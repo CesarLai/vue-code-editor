@@ -51,12 +51,13 @@ export default class WorkBench extends Vue {
     .panel-files {
       display: flex;
       flex-direction: column;
-      flex: 1 0;
+      flex-shrink: 0;
+      width: 20%;
       background: #2a2a2b;
     }
 
     .panel-editor {
-      flex-grow: 3;
+      flex-grow: 1;
       overflow: scroll;
     }
   }
