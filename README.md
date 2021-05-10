@@ -1,24 +1,11 @@
 # vue-code-editor
 
-## Project setup
-```
-yarn install
-```
+> 基于 Vue 3 和 CodeMirror 实现的 Web 代码编辑器。
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## 项目链接 (Vercel App)
 
-### Compiles and minifies for production
-```
-yarn build
-```
+[Vercel App Link](https://vue-code-editor-cesarlai.vercel.app)
 
-### Lints and fixes files
-```
-yarn lint
-```
+## 预览 (Preview)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![App Preview](./docs/images/preview.jpg)
