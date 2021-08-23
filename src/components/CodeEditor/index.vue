@@ -9,11 +9,13 @@ import { Options, Vue } from "vue-class-component";
 
 import { EditorView, keymap } from "@codemirror/view";
 import { EditorState } from "@codemirror/state";
-import { defaultKeymap } from "@codemirror/commands";
+import { history, historyKeymap } from "@codemirror/history";
+import { standardKeymap, insertTab } from "@codemirror/commands";
 import { lineNumbers } from "@codemirror/gutter";
+import { classHighlightStyle } from "@codemirror/highlight";
 import { javascript } from "@codemirror/lang-javascript";
 
-import editorThemeFactory from "./editorThemeFactory";
+import editorThemeFactory from "./themes";
 import { EditorThemes, ThemeConfig } from "./types";
 
 const DEFAULT_THEME = EditorThemes.DARK;
@@ -40,12 +42,27 @@ export default class CodeEditor extends Vue {
 
   initCodeMirror(): void {
     const startState = EditorState.create({
-      doc: "Hello World",
+      doc: "",
       extensions: [
-        keymap.of(defaultKeymap),
-        javascript(),
+        history(),
+        keymap.of([
+          ...standardKeymap,
+          ...historyKeymap,
+          // Tab Keymap
+          {
+            key: "Tab",
+            run: insertTab,
+          },
+        ]),
+        javascript({
+          jsx: true,
+          typescript: true,
+        }),
         lineNumbers(),
-        EditorState.tabSize.of(4),
+        EditorState.tabSize.of(2),
+        // add highlight classname for input
+        classHighlightStyle,
+        // add theme config base on classname
         EditorView.theme(this.themeConfig),
       ],
     });

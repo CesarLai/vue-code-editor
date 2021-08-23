@@ -1,15 +1,15 @@
 import type { StyleSpec } from "style-mod";
 
 /**
- * 编辑器主题类型
+ * Editor Theme Enum
  */
 export enum EditorThemes {
   DARK = "theme-dark",
-  WHITE = "theme-white",
+  LIGHT = "theme-light",
 }
 
 /**
- * 主题配置类型
+ * Theme Config Type
  */
 export interface ThemeConfig {
   [key: string]: StyleSpec;

@@ -4,7 +4,7 @@
     <section class="page-content">
       <div class="panel-files"></div>
       <div class="panel-editor">
-        <code-editor :theme="theme" />
+        <CodeEditor :theme="theme" />
       </div>
     </section>
   </div>
@@ -14,7 +14,7 @@
 import { Options, Vue } from "vue-class-component";
 
 import CodeEditor from "@/components/CodeEditor";
-import { EditorThemes } from "@/components/CodeEditor/types";
+import { EditorThemes } from "@/components/CodeEditor";
 
 @Options({
   components: {
