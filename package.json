@@ -2,7 +2,7 @@
   "name": "vue-code-editor",
   "version": "0.1.1",
   "private": true,
-  "description": "基于 Vue 3 和 CodeMirror 6 实现的 Web 代码编辑器。",
+  "description": "A code editor sample base on Vue 3 and CodeMirror 6.",
   "author": "Cesar Lai",
   "license": "MIT",
   "homepage": ".",
